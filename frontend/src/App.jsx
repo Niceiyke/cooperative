@@ -7,13 +7,16 @@ import EducationLoan from '../src/pages/EducationLoanPage'
 import EmergencyLoan from '../src/pages/EmergencyLoanPage'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import ThemeContextProvider from './contex/ThemeContext'
 
 
 function App() {
 
 
   return (
-    <div className='h-screen overflow-y-scroll no-scrollbar'>
+    
+    <div className='h-screen overflow-y-scroll no-scrollbar bg-black'>
+      <ThemeContextProvider>
     <Navbar/>
     <Routes>
       <Route  path='/login' element={<Login/>}/>
@@ -24,6 +27,7 @@ function App() {
       <Route  path='/education-loan' element={<EducationLoan/>}/>
       <Route  path='/change-contribution' element={<ContributionForm/>}/>
     </Routes>
+    </ThemeContextProvider>
     </div>
   )
 }
